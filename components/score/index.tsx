@@ -2,9 +2,9 @@ import styles from "./Score.module.css";
 import { FC, useMemo } from "react";
 import { classNames } from "utils/classnames";
 
-const Score: FC<{ score: number; metric?: "kmh" | "mph" }> = ({
+const Score: FC<{ score: number; metric?: "km/h" | "mph" }> = ({
   score,
-  metric = "kmh",
+  metric = "km/h",
 }) => {
   const scoreClassname = useMemo(() => {
     if (score >= 30) {

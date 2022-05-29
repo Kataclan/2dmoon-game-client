@@ -1,23 +1,39 @@
 import styles from "../styles/Home.module.css";
 import dynamic from "next/dynamic";
-import { useState } from "react";
-import Score from "components/score";
 
-const GameSketch = dynamic(() => import("../components/game-sketch"), {
-  ssr: false,
-});
+import Score from "components/score";
+import { useState } from "react";
+import { LOCAL_KEY_HITS, LOCAL_KEY_RECORD } from "config/local";
+import GameSketch from "components/game-sketch";
+import Record from "components/record";
+import TweetButton from "components/tweet-button";
 
 export default function Home() {
+  const saveToLocal = true;
   const [score, setScore] = useState(0);
+  const [isGameFinished, setIsGameFinished] = useState(false);
 
-  const handleGameFirstPress = () => {
-    console.log("First game press");
-  };
+  const handleGameFirstPress = () => {};
+
   const handleGameFinish = (score: number) => {
+    console.log(isGameFinished);
     setScore(score);
+    setIsGameFinished(true);
+    if (saveToLocal && typeof window.localStorage !== undefined) {
+      let totalHits =
+        parseInt(window.localStorage.getItem(LOCAL_KEY_HITS) || "") || 0;
+      const maxSpeed =
+        parseInt(window.localStorage.getItem(LOCAL_KEY_RECORD) || "") || 0;
+      const record = score > maxSpeed ? score : maxSpeed;
+      totalHits += 1;
+      localStorage.setItem(LOCAL_KEY_HITS, totalHits.toString());
+      localStorage.setItem(LOCAL_KEY_RECORD, record.toString());
+    }
   };
+
   const handleResetGame = () => {
     setScore(0);
+    setIsGameFinished(false);
   };
 
   return (
@@ -37,7 +53,10 @@ export default function Home() {
           onResetGame={handleResetGame}
         />
       </main>
-      <footer className={styles.home__footer}></footer>
+      <footer className={styles.home__footer}>
+        <Record />
+        <TweetButton />
+      </footer>
     </div>
   );
 }

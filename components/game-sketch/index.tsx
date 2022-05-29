@@ -45,6 +45,7 @@ const GameSketch: React.FC<GameSketchProps> = ({
   // Custom methods
   const resetGame = () => {
     initObjects();
+    onResetGame();
   };
 
   const initObjects = () => {
