@@ -9,32 +9,32 @@
 
 .score {
   font-size: 50px;
-  color: "#005BBB";
+  color: #005bbb;
   transition: 0.2;
 }
 
 .score_1,
 .score_2 {
   font-size: 20px;
-  color: "#DCDCDC";
+  color: #dcdcdc;
 }
 .score_3 {
   font-size: 30px;
-  color: "#DCDCDC";
+  color: #dcdcdc;
 }
 .score_4 {
   font-size: 40px;
-  color: "#CE5AD9";
+  color: #ce5ad9;
 }
 .score_5 {
   font-size: 50px;
-  color: "#CE5AD9";
+  color: #ce5ad9;
 }
 .score_6 {
   font-size: 60px;
-  color: "#0099BB";
+  color: #0099bb;
 }
 .score_7 {
   font-size: 70px;
-  color: "#22e51d";
+  color: #22e51d;
 }
