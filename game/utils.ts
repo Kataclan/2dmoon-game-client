@@ -52,7 +52,7 @@ export function initRocket(
     width,
     height,
     position: {
-      y: containerHeight - height, // bottom left corner
+      y: containerHeight - height * 2,
       x: 10,
     },
     minY: height / 2,
@@ -80,7 +80,7 @@ export function initMoon(
 ) {
   const iWidth = 256;
   const iHeight = 256;
-  const ratio = 1.5;
+  const ratio = 3;
   const width = iWidth / ratio;
   const height = iHeight / ratio;
   const padding = 10;
@@ -92,8 +92,8 @@ export function initMoon(
     width,
     height,
     position: {
-      y: 0 - height / 2 + padding,
-      x: containerWidth - width / 2 - padding,
+      y: 0,
+      x: containerWidth - width,
     },
     minY: height / 2,
     maxY: containerHeight - height,

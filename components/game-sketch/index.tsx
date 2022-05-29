@@ -240,12 +240,13 @@ const GameSketch: React.FC<GameSketchProps> = ({
       setTimeout(function () {
         resetGame();
       }, 2000);
-      if (moon.current!.props.collision === true) {
-        moon.current!.update(
-          moon.current!.props.height / 2,
-          CONTAINER_HEIGHT.current! - moon.current!.props.height / 2
-        );
-      }
+      // Update moon
+      // if (moon.current!.props.collision === true) {
+      //   moon.current!.update(
+      //     moon.current!.props.height / 2,
+      //     CONTAINER_HEIGHT.current! - moon.current!.props.height / 2
+      //   );
+      // }
     }
   };
 
