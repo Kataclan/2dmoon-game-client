@@ -1,8 +1,40 @@
-.score {
+.container {
   position: absolute;
   left: 50%;
   display: block;
   transform: translate(-50%, 0);
   color: rgba(255, 255, 255, 0.8);
   text-align: center;
+}
+
+.score {
+  font-size: 50px;
+  color: "#005BBB";
+  transition: 0.2;
+}
+
+.score_1,
+.score_2 {
+  font-size: 20px;
+  color: "#DCDCDC";
+}
+.score_3 {
+  font-size: 30px;
+  color: "#DCDCDC";
+}
+.score_4 {
+  font-size: 40px;
+  color: "#CE5AD9";
+}
+.score_5 {
+  font-size: 50px;
+  color: "#CE5AD9";
+}
+.score_6 {
+  font-size: 60px;
+  color: "#0099BB";
+}
+.score_7 {
+  font-size: 70px;
+  color: "#22e51d";
 }
